@@ -24,6 +24,12 @@ public class Ejercicios {
         
         /*************************************************************/
         //problema5("hola que tal, como estas???");
+
+        /*************************************************************/
+        //problema4("hola", 6);
+
+        /*************************************************************/
+        problema8("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
         
         /*************************************************************/
         //System.out.println(problema11(10));
@@ -75,14 +81,14 @@ public class Ejercicios {
 
 
     /*      FUNCIONES PARA DAR SOLUCION A LOS PROBLEMAS       */
-    /*      PROBLEMA 1      */
+    /*      PROBLEMA 1 -> Longuitud de una cadena      */
     public static void problema1(String cadena){
         //Forma 1 de resolver el ejercicio, usando la propiedad length de la Clase String
         System.out.println("El numero de caracteres de la cadena ingresada es: "+cadena.length());
     }//fin problema1()
 
 
-    /*      PROBLEMA 2      */
+    /*      PROBLEMA 2 -> Devolver texto recortado segun numero de caracteres indicados      */
     public static void problema2(String cadena, int corte){
         //Una validacion que hay que hacer es que el entero corte no sea mayor que la cadena ya que seria imposible partirla
         if(corte > cadena.length()){
@@ -93,7 +99,7 @@ public class Ejercicios {
         System.out.println(cadena.substring(0, corte));
     }//fin problema2()
 
-    /*      PROBLEMA 3      */
+    /*      PROBLEMA 3 -> Separacion de String en Array por cierto caracter     */
     public static void problema3(String cadena, String caracteres){
         
         /*
@@ -107,7 +113,16 @@ public class Ejercicios {
         }
     } //fin problema3();
 
-    /*      PROBLEMA 5      */
+    
+    /*      PROBLEMA 4 -> Repeticion de texto n veces      */
+    public static void problema4(String cadena, int veces){
+        for(int i = 0; i < veces; i++){
+            System.out.println(cadena);
+        }
+    }
+    
+    
+    /*      PROBLEMA 5 -> Revertir una cadena      */
     public static void problema5(String cadena){
         char aux[] = cadena.toCharArray();
         String resultado = "";
@@ -120,9 +135,27 @@ public class Ejercicios {
 
     }//fin problema5();
 
-    /*      PROBLEMA 11     */
+    /*      PROBLEMA 6 -> Contador de palabra en un texto       */
+    public static void problema6(String palabra, String texto){
+
+    }
+
+    /*      PROBLEMA 8 -> Eliminacion de patron en un texto dado        */
+    public static void problema8(String texto, String patron){
+        String[] resultado = texto.split(patron);
+        for(String palabra: resultado){
+            System.out.println(palabra);
+        }
+    }
+    
+    /*      PROBLEMA 11 -> Calcular el factorial de un numero     */
     public static int problema11(int numero){
-        if(numero == 1){
+        if(numero < 0){
+            System.out.println("No existe el factorial de numeros negativos -_-");
+            return -1;
+        }
+
+        if(numero == 1 || numero ==0){
             return 1;
         }
         else{
@@ -130,7 +163,7 @@ public class Ejercicios {
         }
     }//fin problema11();
 
-    /*      PROBLEMA 12     */
+    /*      PROBLEMA 12 -> Determinar si es primo     */
     public static void problema12(int numero){
         if(numero < 0){
             System.out.println("El numero debe de ser Positivo -_-");
@@ -159,14 +192,14 @@ public class Ejercicios {
         
     }//fin problema12();
 
-    /*      PROBLEMA 13     */
+    /*      PROBLEMA 13 -> Determinar si es par     */
     public static void problema13(int numero){
         String mensaje = (numero%2 == 0)?"EL NUMERO ES PAR":"EL NUMERO ES IMPAR";
         System.out.println(mensaje);
     }//fin problema13()
 
 
-    /*      PROBLEMA 16     */
+    /*      PROBLEMA 16 -> Calcular el monto final despues de aplicar un descuento    */
     public static void problema16(int cantidad, int porcentaje){
         int descuento = (cantidad * porcentaje)/100;
         System.out.println("El monto final es: "+ (cantidad - descuento));
